@@ -1,6 +1,6 @@
 # escape=`
 
-FROM drydock/w16:latest
+FROM drydock/w16:master
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
