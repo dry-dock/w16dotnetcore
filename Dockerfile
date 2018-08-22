@@ -7,7 +7,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 # Install .NET Core SDK
 ENV DOTNET_SDK_VERSION 2.1.401
 ENV DOTNET_SDK_DOWNLOAD_URL https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-win-x64.zip
-ENV DOTNET_SDK_DOWNLOAD_SHA d3b5c9d071ba5e083feaa4507c60d99d3d10f8a01b69263ef1f05ae0ebe973a576a94a20fafd8455f7aba2f9feedaba671775586e9c553e1811e2cf32d477321
+ENV DOTNET_SDK_DOWNLOAD_SHA 7d017487c1a11ae4db862b1efa7ba9beb0eabcf5d2467bc4055aa2227a548663a596682ff4adba4688930b22472587f29b83bce9f689efc5e9f4e37f7edda000
 
 RUN Invoke-WebRequest $Env:DOTNET_SDK_DOWNLOAD_URL -OutFile dotnet.zip; `
     if ((Get-FileHash dotnet.zip -Algorithm sha512).Hash -ne $Env:DOTNET_SDK_DOWNLOAD_SHA) { `
